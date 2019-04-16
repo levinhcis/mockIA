@@ -1,0 +1,76 @@
+package com.example.levin.mockia2;
+
+import android.content.Context;
+import android.util.Log;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Queue;
+
+public class BackendRunner {
+    private Context appContext;
+
+    private FileUtility fileUtility;
+    private SkillTree skillTree;
+    private ProgressionGenerator progressionGenerator;
+    private StorageUtility storageUtility;
+
+    private ArrayList<QueueItem> sessionQueue;
+
+    public BackendRunner(Context c) throws IOException {
+        appContext = c;
+
+        fileUtility = new FileUtility(appContext);
+
+        skillTree = new SkillTree(fileUtility);
+        Log.d("myInfoTag", "skillTree init ended.");
+        storageUtility = new StorageUtility(appContext);
+        Log.d("myInfoTag", "storageUtility init ended.");
+        progressionGenerator = new ProgressionGenerator(skillTree, fileUtility, storageUtility);
+        Log.d("myInfoTag", "progressionGenerator init ended.");
+        sessionQueue = new ArrayList<>();
+
+        //TEMPORARY:
+        progressionGenerator.generateSongSkills("P000003");
+
+        generateItemSessionQueue();
+        Log.d("myInfoTag", "sessionQueue generate ended.");
+
+        //on first opening app
+    }
+
+    public void generateItemSessionQueue() throws IOException {
+        ArrayList<String> stringSessionQueue = progressionGenerator.generateSessionQueue();
+        Log.d("myInfoTag", "stringSessionQueue: " + progressionGenerator.generateSessionQueue());
+        Log.d("myInfoTag", "songAndSkillsMatrix: " + progressionGenerator.songAndSkillsMatrix);
+        for (String id : stringSessionQueue) {
+            Log.d("myInfoTag", "id in queue: " + id);
+            QueueItem item;
+            ArrayList<String> contents = fileUtility.getObjectContentsArray(id);
+            if (contents != null) {
+                if (id.substring(0, 1).equals("T")) {
+                    item = new QueueItem(id, contents.get(1), "Task - " + contents.get(2).substring(0, 30) + "...");
+                } else {
+                    item = new QueueItem(id, "\"" + contents.get(1) + "\"", "Song");
+                }
+            }
+            else
+            {
+                if (id.substring(0, 1).equals("T"))
+                    item = new QueueItem(id, id, "Task");
+                else
+                    item = new QueueItem(id, id, "Song");
+            }
+            sessionQueue.add(item);
+        }
+        Log.d("myInfoTag", "sessionQueue size: " + sessionQueue.size());
+    }
+
+    public ArrayList<QueueItem> getSessionQueue() {
+        return sessionQueue;
+    }
+
+    public String getTargetSongName() throws IOException {
+        return fileUtility.getObjectContentsArray(storageUtility.getFormattedSongSkillsMatrix().get(0).get(0)).get(1);
+    }
+}

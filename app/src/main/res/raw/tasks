@@ -1,0 +1,83 @@
+{T300001
+-name:
+Tablature
+-contents:
+placeholder
+-successCondition:
+Can you successfully read the given tabs?
+}
+
+{T200001
+-name:
+Clapping rhythms
+-contents:
+placeholder
+-successCondition:
+Can you clap through those sections consistently, without stopping?
+}
+
+{T000001
+-name:
+Positioning
+-contents:
+Sitting down on a chair, place the
+waist of the guitar on your right
+thigh.
+Rest your right forearm on the body
+of the guitar. Rest your right thumb
+on the top string of the guitar,
+right above the sound hole (or the
+pickups).
+Place your left thumb square on the
+back side of the neck.
+Don't let the neck rest in your
+left palm.
+-successCondition:
+Is the guitar nice and comfortable?
+}
+{T000002
+-name:
+Thumb plucking
+-contents:
+Place your right thumb right above
+the string you want to pluck.
+With a quick, small striking motion,
+pluck through the string.
+Don't rest your thumb on the string
+beforehand.
+-successCondition:
+Can you pluck every string in a row to a consistent beat?
+}
+{T000003
+-name:
+Thumb strumming
+-contents:
+Place your right thumb right above
+the top string. With a fluid sweep,
+pluck lightly through every string.
+Make sure your thumb never goes
+deeper than about 2mm from the
+strings - you don't want to be
+fighting through strings, but more
+sweeping through them.
+-successCondition:
+Can you strum the strings to a consistent beat, so that every strum rings out?
+}
+{T000004
+-name:
+T000004
+-contents:
+-successCondition:
+}
+{T000005
+-name:
+T000005
+-contents:
+-successCondition:
+}
+{T000006
+-name:
+T000006
+-contents:
+-successCondition:
+}

@@ -1,0 +1,333 @@
+//
+LINK TO SKILL MAP:
+https://www.lucidchart.com/invitations/accept/e39e0568-3342-4211-bc37-1170a5096a54
+
+ID NAMING SCHEME:
+"S" for skills, "T" for tasks, "P" for songs.
+The number afterwards is purely in order of creation; it does NOT refer to the node's
+actual relationship to other nodes.
+
+PROGRESS:
+Every time a task related to the skill is performed, "progress" for that skill is increased by
+10.
+//
+
+
+{S000001
+-name:
+Positioning
+-description:
+Holding the guitar, and positioning the hands.
+-tasks:
+T000001 "Positioning"
+-prevSkillId:
+-maxProgress:
+10
+}
+
+{S000002
+-name:
+Thumb plucking and strumming
+-description:
+Basic plucking and strumming with your fingers.
+-tasks:
+T000002 "Thumb plucking"
+T000003 "Thumb strumming"
+-prevSkillId:
+S000001
+-maxProgress:
+50
+}
+
+{S500001
+-name:
+Fingerpicking I
+-description:
+Basic fingerpicking in classical style (immobile fingers, mobile thumb).
+-tasks:
+T500001
+-prevSkillId:
+S000002
+-maxProgress:
+150
+}
+
+{S600001
+-name:
+Palm slap
+-description:
+Palm slapping on the strings (acoustic style).
+-tasks:
+T600001
+-prevSkillId:
+S000002
+-maxProgress:
+20
+}
+
+{S000003
+-name:
+Open Chords I
+-description:
+The basic open chords Em, A, G, and C.
+-tasks:
+T000007 "Em chord"
+T000008 "A chord"
+T000009 "G chord"
+T000010 "C chord"
+-prevSkillId:
+S000002
+-maxProgress:
+100
+}
+
+{S000004
+-name:
+Power chords
+-description:
+The basic power chord shape.
+-tasks:
+T000011
+-prevSkillId:
+S000003
+-maxProgress:
+100
+}
+
+{S000005
+-name:
+Barre chords I
+-description:
+The basic barre chords.
+-tasks:
+T000012
+T000013
+T000014
+T000015
+-prevSkillId:
+S000004
+-maxProgress:
+150
+}
+
+{S000006
+-name:
+Chord switching
+-description:
+Building up speed switching chords.
+-tasks:
+T000016
+-prevSkillId:
+S000005
+-maxProgress:
+100
+}
+
+{S010001
+-name:
+Moving power chords
+-description:
+Building up speed with the mobile power chord shape.
+-tasks:
+T010001
+-prevSkillId:
+S000004
+-maxProgress:
+100
+}
+
+{S100001
+-name:
+Single notes I
+-description:
+Playing single note lines.
+-tasks:
+T100001
+-prevSkillId:
+S000002
+-maxProgress:
+50
+}
+
+{S100002
+-name:
+Basic picking
+-description
+How to hold and downstroke with a pick.
+-tasks:
+T100002
+-prevSkillId:
+S100001
+-maxProgress:
+150
+}
+
+{S100003
+-name:
+Skipping strings
+-description
+How to skip strings when picking.
+-tasks:
+T100003
+-prevSkillId:
+S100002
+-maxProgress:
+100
+}
+
+{S100004
+-name:
+Basic alternate picking
+-description:
+Basics of alternate picking.
+-tasks:
+T100004
+-prevSkillId:
+S100003
+-maxProgress:
+150
+}
+
+{S100005
+-name:
+Picking speed
+-description:
+Building up speed with alternate picking.
+-tasks:
+T100005
+-prevSkillId:
+S100004
+-maxProgress:
+150
+}
+
+{S100006
+-name:
+Economy picking
+-description:
+Basics of economy picking
+-tasks:
+T100006
+-prevSkillId:
+S100005
+-maxProgress:
+150
+}
+
+{S130001
+-name:
+Palm muting
+-description:
+Palm muting while picking.
+-tasks:
+T130001
+-prevSkillId:
+S100002
+-maxProgress:
+50
+}
+
+{S120001
+-name:
+Sweep picking
+-description:
+Basics of sweep picking
+-tasks:
+T120001
+-prevSkillId:
+S100006
+-maxProgress:
+150
+}
+
+{S110001
+-name:
+Hammers/pulls
+-description:
+The hammer-on and pull-off.
+-tasks:
+T110001
+-prevSkillId:
+S100001
+-maxProgress:
+100
+}
+
+{S110002
+-name:
+Trills
+-description:
+Trills with hammer/pulls.
+-tasks:
+T110002
+T110012
+-prevSkillId:
+S110001
+-maxProgress:
+50
+}
+
+{S110003
+-name:
+Legato picking
+-description:
+Basics of legato picking.
+-tasks:
+T110003
+-prevSkillId:
+S110002
+-maxProgress:
+150
+}
+
+{S111001
+-name:
+One-string tapping
+-description:
+The most basic tapping style on one string.
+-tasks:
+T111001
+-prevSkillId:
+S110003
+-maxProgress:
+150
+}
+
+{S200001
+-name:
+Rhythms I
+-description:
+Basic rhythms, for strumming and plucking.
+-tasks:
+T200001 "Basic rhythms"
+-prevSkillId:
+S000002
+-maxProgress:
+50
+}
+
+{S300001
+-name:
+Reading tablature
+-description
+How to read guitar tab.
+-tasks:
+T300001 "Reading tablature"
+-prevSkillId:
+S000001
+-maxProgress:
+20
+}
+
+{S400001
+-name:
+Capo
+-description:
+How to place a capo.
+-tasks:
+T400001 "Using a capo"
+-prevSkillId:
+S000001
+-maxProgress:
+10
+}
